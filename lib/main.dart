@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_project/pages/home_page.dart';
-import 'package:my_first_project/pages/login_page.dart';
-import 'package:my_first_project/pages/splash.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_first_project/size_configs.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'screen/screens.dart';
 
-void main() {
+bool? seenOnboard;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top]);
+
+  SharedPreferences pref = await SharedPreferences.getInstance();
+  seenOnboard = pref.getBool('seenOnboard') ?? false;
+
   runApp(MyApp());
 }
 
@@ -13,11 +25,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'TKids',
+      title: 'TKids App',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        textTheme: GoogleFonts.manropeTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home:
+          HomeScreen(), //seenOnboard == true ? LoginScreen() : OnBoardingScreen(),
     );
   }
 }
