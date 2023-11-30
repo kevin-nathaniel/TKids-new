@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_project/app_styles.dart';
+// import 'package:my_first_project/app_styles.dart';
 import 'package:my_first_project/size_configs.dart';
 
 class MyTextButton extends StatelessWidget {
@@ -22,13 +22,12 @@ class MyTextButton extends StatelessWidget {
         width: SizeConfig.blockSizeV! * 100,
         child: TextButton(
           onPressed: onPressed,
-          child: Text(
-            btnName,
-            style: kBodyText1,
+          child: const Text(
+            'login',
           ),
-          style: TextButton.styleFrom(
-            backgroundColor: bgColor,
-          ),
+          // style: TextButton.styleFrom(
+          //   backgroundColor: bgColor,s
+          // ),
         ),
       ),
     );

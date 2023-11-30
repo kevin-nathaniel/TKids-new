@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_project/app_styles.dart';
-import 'package:my_first_project/size_configs.dart';
 
 class OnBoardNavBtn extends StatelessWidget {
   const OnBoardNavBtn({

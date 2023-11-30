@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './size_configs.dart';
 
-const Color PrimaryColor = Color(0xe51cc2fa);
+const Color PrimaryColor = Color(0xFF2b6bca);
 const Color SecondaryColor = Color(0xff000000);
 const Color ScaffoldBackground = Color(0xffFFF3E9);
 
@@ -13,13 +13,13 @@ final kTitle = TextStyle(
 
 final kTitle1 = TextStyle(
   fontFamily: 'Klasik',
-  fontSize: SizeConfig.blockSizeH?.toDouble() ?? 0,
+  fontSize: 30,
   color: SecondaryColor,
 );
 
 final kBodyText1 = TextStyle(
   color: SecondaryColor,
-  fontSize: SizeConfig.blockSizeH! * 4.5,
+  fontSize: 16,
   fontWeight: FontWeight.bold,
 );
 

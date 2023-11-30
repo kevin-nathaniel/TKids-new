@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:my_first_project/app_styles.dart';
 import 'package:my_first_project/screen/authentication/login_screen.dart';
+import 'package:my_first_project/screen/grade/grade.dart';
+import 'package:my_first_project/screen/location/map_view.dart';
+import 'package:my_first_project/screen/report/log_activities.dart';
+import 'package:my_first_project/screen/screens.dart';
 import 'package:my_first_project/size_configs.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -76,110 +79,74 @@ class HomeScreen extends StatelessWidget {
                               Container(
                                 padding: EdgeInsets.all(25),
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
                                   borderRadius: BorderRadius.circular(5),
                                   border: Border.all(
-                                    color: Colors.grey.shade300,
+                                    color: Colors.transparent,
                                   ),
                                 ),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        ItemCategory(
-                                          title: 'Ngosan',
-                                          icon:
-                                              'assets/images/icons/blue-coffee.png',
-                                        ),
-                                        ItemCategory(
-                                          title: 'Activity',
-                                          icon:
-                                              'assets/images/icons/blue-report.png',
-                                        ),
-                                        ItemCategory(
-                                          title: 'Grade',
-                                          icon:
-                                              'assets/images/icons/blue-nilai.png',
-                                        ),
-                                        ItemCategory(
-                                          title: 'Location',
-                                          icon:
-                                              'assets/images/icons/blue-maps.png',
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 20),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        ItemCategory(
-                                          title: 'Ngosan',
-                                          icon:
-                                              'assets/images/icons/blue-coffee.png',
-                                        ),
-                                        ItemCategory(
-                                          title: 'Activity',
-                                          icon:
-                                              'assets/images/icons/blue-report.png',
-                                        ),
-                                        ItemCategory(
-                                          title: 'Grade',
-                                          icon:
-                                              'assets/images/icons/blue-nilai.png',
-                                        ),
-                                        ItemCategory(
-                                          title: 'Location',
-                                          icon:
-                                              'assets/images/icons/blue-maps.png',
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'New Services',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                            color: Colors.black,
+                                            padding: EdgeInsets.all(1),
+                                            child: ItemCategory(
+                                              title: 'Activity',
+                                              icon:
+                                                  'assets/images/icons/blue-report.png',
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ActivityList(),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                          Container(
+                                            color: Colors.black,
+                                            child: ItemCategory(
+                                              title: 'Grade',
+                                              icon:
+                                                  'assets/images/icons/blue-nilai.png',
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        GradeList(),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                          Container(
+                                            color: Colors.black,
+                                            child: ItemCategory(
+                                              title: 'Location',
+                                              icon:
+                                                  'assets/images/icons/blue-maps.png',
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        MapsPage(),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    'See all',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: PrimaryColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 20),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  children: [
-                                    ItemNew(
-                                      image:
-                                          'assets/images/kids/aktivitas-anak.png',
-                                    ),
-                                    ItemNew(
-                                      image:
-                                          'assets/images/kids/lokasi-anak.png',
-                                    ),
-                                    ItemNew(
-                                      image:
-                                          'assets/images/kids/nilai-anak.png',
-                                    ),
-                                  ],
                                 ),
                               ),
                             ],
@@ -220,7 +187,7 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
+                                      builder: (context) => ActivityList(),
                                     ),
                                   );
                                 },
@@ -233,7 +200,7 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
+                                      builder: (context) => MapsPage(),
                                     ),
                                   );
                                 },
@@ -246,7 +213,7 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
+                                      builder: (context) => GradeList(),
                                     ),
                                   );
                                 },
@@ -259,7 +226,7 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
+                                      builder: (context) => ProfileScreen(),
                                     ),
                                   );
                                 },
@@ -316,33 +283,41 @@ class ItemCategory extends StatelessWidget {
     Key? key,
     required this.title,
     required this.icon,
+    required this.onPressed,
   }) : super(key: key);
 
   final String title;
   final String icon;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          width: 40,
-          height: 40,
-          child: Image.asset(
-            icon,
-            fit: BoxFit.cover,
-          ),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              child: Image.asset(
+                icon,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 5),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 14,
+              ),
+            ),
+          ],
         ),
-        SizedBox(height: 5),
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 14,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_project/size_configs.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'screen/screens.dart';
 
@@ -24,16 +23,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'TKids App',
-      theme: ThemeData(
-        textTheme: GoogleFonts.manropeTextTheme(
-          Theme.of(context).textTheme,
+        debugShowCheckedModeBanner: false,
+        title: 'TKids App',
+        theme: ThemeData(
+          textTheme: GoogleFonts.manropeTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          primarySwatch: Colors.blue,
         ),
-        primarySwatch: Colors.blue,
-      ),
-      home:
-          HomeScreen(), //seenOnboard == true ? LoginScreen() : OnBoardingScreen(),
-    );
+        home:
+            HomeScreen() //seenOnboard == true ? LoginScreen() : OnBoardingScreen(),
+        );
   }
 }

@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Stack(
       children: [
         Positioned(
-          bottom: height * 2,
+          bottom: height * 8,
           child: Container(
             child: Image.asset('assets/images/login/login_bg.png'),
           ),
@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             _password = value;
                                           },
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 30,
                                         ),
                                         MyTextButton(

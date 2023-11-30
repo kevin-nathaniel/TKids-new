@@ -90,7 +90,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       textAlign: TextAlign.center,
                       text: TextSpan(
                         style: kBodyText1,
-                        children: [
+                        children: const [
                           TextSpan(text: 'WE CAN '),
                           TextSpan(
                             text: 'HELP YOU ',
